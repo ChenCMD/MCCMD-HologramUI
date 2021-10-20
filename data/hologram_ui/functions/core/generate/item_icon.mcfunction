@@ -5,20 +5,27 @@
 # @private
     #declare tag Init
 
+# Temp初期化
+    data modify storage hologram_ui: Temp set value {}
+
 # ベースsummon
     summon armor_stand ~ 300 ~ {Marker:1b,Invisible:1b,Tags:["Hologram","HologramStand","Init"],Passengers:[{id:"item",Item:{id:"barrier",Count:1b,tag:{CustomModelData:0}},NoGravity:1b,PickupDelay:32767s,Tags:["Hologram","HologramItem"]}]}
-# HologramID
-    execute store result score @e[tag=HologramItem,distance=..0,y=300,limit=1] HologramID run data get storage hologram_ui: TextGroup[-1].HologramID
 # えんちゃ
-    execute if data storage hologram_ui: TextGroup[-1].ItemIcon[-1].Setting{Enchant:1b} run data merge entity @e[type=item,tag=HologramItem,distance=..0,y=300,limit=1] {Item:{tag:{Enchantments:[]}}}
+    execute if data storage hologram_ui: TextGroup[-1].ItemIcon[-1].Setting{Enchant:1b} run data modify storage hologram_ui: TempItem.tag.Enchantments set value []
 # ItemID
-    data modify entity @e[type=item,tag=HologramItem,distance=..0,y=300,limit=1] Item.id set from storage hologram_ui: TextGroup[-1].ItemIcon[-1].id
+    data modify storage hologram_ui: TempItem.id set from storage hologram_ui: TextGroup[-1].ItemIcon[-1].id
 # CMD
-    data modify entity @e[type=item,tag=HologramItem,distance=..0,y=300,limit=1] Item.tag.CustomModelData set from storage hologram_ui: TextGroup[-1].ItemIcon[-1].Setting.CMD
+    data modify storage hologram_ui: TempItem.tag.CustomModelData set from storage hologram_ui: TextGroup[-1].ItemIcon[-1].Setting.CMD
 # CustomModelData
-    execute if data storage hologram_ui: TextGroup[-1].ItemIcon[-1].Setting.CustomModelData run data modify entity @e[type=item,tag=HologramItem,distance=..0,y=300,limit=1] Item.tag.CustomModelData set from storage hologram_ui: TextGroup[-1].ItemIcon[-1].Setting.CustomModelData
+    execute if data storage hologram_ui: TextGroup[-1].ItemIcon[-1].Setting.CustomModelData run data modify storage hologram_ui: TempItem.tag.CustomModelData set from storage hologram_ui: TextGroup[-1].ItemIcon[-1].Setting.CustomModelData
+
+# Tempを適用
+    data modify entity @e[type=item,tag=HologramItem,distance=..0,y=300,limit=1] Item set from storage hologram_ui: Temp
+# HologramID
+    execute store result score @e[type=item,tag=HologramItem,distance=..0,y=300,limit=1] HologramID run data get storage hologram_ui: TextGroup[-1].HologramID
 # AnyNBT
-    data modify entity @e[type=item,tag=HologramItem,distance=..0,y=300,limit=1] {} merge from storage hologram_ui: TextGroup[-1].ItemIcon[-1].Setting.NBT
+    execute if data storage hologram_ui: TextGroup[-1].ItemIcon[-1].Setting.NBT run data modify entity @e[type=item,tag=HologramItem,distance=..0,y=300,limit=1] {} merge from storage hologram_ui: TextGroup[-1].ItemIcon[-1].Setting.NBT
+
 # Offset.y
     tp @e[type=armor_stand,tag=HologramStand,tag=Init,distance=..0.001,y=300,limit=1] ~ ~ ~
     execute store result score $Move HologramUICore run data get storage hologram_ui: TextGroup[-1].ItemIcon[-1].Offset 10000

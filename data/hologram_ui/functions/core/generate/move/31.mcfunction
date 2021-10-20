@@ -1,6 +1,6 @@
 #> hologram_ui:core/generate/move/31
 # @within function
-#   hologram_ui:core/generate/offset
+#   hologram_ui:core/generate/offset/*
 #   hologram_ui:core/generate/base
 #   hologram_ui:core/generate/item_icon
 
