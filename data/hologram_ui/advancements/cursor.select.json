@@ -1,0 +1,16 @@
+{
+    "criteria": {
+        "onAttack": {
+            "trigger": "minecraft:player_hurt_entity",
+            "conditions": {
+                "entity": {
+                    "type": "minecraft:slime",
+                    "nbt": "{Tags:[\"HologramInteractTarget\"]}"
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "hologram_ui:core/cursor/select"
+    }
+}

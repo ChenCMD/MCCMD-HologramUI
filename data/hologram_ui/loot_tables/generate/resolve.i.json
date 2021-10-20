@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:generic",
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:debug_stick",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_lore",
+                            "lore": [
+                                [
+                                    {
+                                        "storage": "hologram_ui:",
+                                        "nbt": "TextGroup[-1].Text[-1]",
+                                        "interpret": true
+                                    }
+                                ]
+                            ],
+                            "entity": "this"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

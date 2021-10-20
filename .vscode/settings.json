@@ -1,0 +1,13 @@
+{
+    "datapack.lint.nameOfScoreHolders": [
+        "error",
+        {
+            "label": "DollerPrefix",
+            "prefix": "$"
+        }
+    ],
+    "datapack.lint.strictTagCheck": [
+        "error",
+        true
+    ]
+}
