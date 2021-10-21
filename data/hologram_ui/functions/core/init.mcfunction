@@ -2,7 +2,7 @@
 # @within tag/function load
 
 #> 処理用
-# @internal
+# @within hologram_ui:**
     #declare function array_util:api/reverse
     #declare storage array_util:
     #declare tag HologramItem
