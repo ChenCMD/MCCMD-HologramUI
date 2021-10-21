@@ -3,8 +3,8 @@
 
 #> 処理用
 # @internal
-    #declare function chenbr_array_utility:api/reverse
-    #declare storage chenbr:array_util
+    #declare function array_util:api/reverse
+    #declare storage array_util:
     #declare tag HologramItem
     #declare tag HologramCollider
     #declare tag HologramStand
