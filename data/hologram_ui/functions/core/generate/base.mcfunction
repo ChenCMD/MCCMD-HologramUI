@@ -8,9 +8,9 @@
     execute if data storage hologram_ui: Test{String:"Item()"} run function hologram_ui:core/generate/item_icon
     execute unless data storage hologram_ui: Test{String:"Item()"} unless data storage hologram_ui: Test{String:""} run function hologram_ui:core/generate/text
 # Collider
-    execute unless data storage hologram_ui: TextGroup[-1].Setting{CursorCollider:0b} positioned ~ ~0.15 ~ run summon minecraft:area_effect_cloud ~ ~ ~ {Age:-2147483648,Duration:-1,WaitTime:-2147483648,Tags:["Hologram","HologramCollider"]}
-    execute unless data storage hologram_ui: TextGroup[-1].Setting{CursorCollider:0b} positioned ~ ~0.15 ~ run tp @e[type=area_effect_cloud,tag=HologramCollider,distance=..0.0001,limit=1] ~ ~ ~ ~90 ~
-    execute unless data storage hologram_ui: TextGroup[-1].Setting{CursorCollider:0b} positioned ~ ~0.15 ~ store result score @e[type=area_effect_cloud,tag=HologramCollider,distance=..0.0001,limit=1] HologramID run data get storage hologram_ui: TextGroup[-1].HologramID
+    execute unless data storage hologram_ui: TextGroup[-1].Setting{Selectable:0b} positioned ~ ~0.15 ~ run summon minecraft:area_effect_cloud ~ ~ ~ {Age:-2147483648,Duration:-1,WaitTime:-2147483648,Tags:["Hologram","HologramCollider"]}
+    execute unless data storage hologram_ui: TextGroup[-1].Setting{Selectable:0b} positioned ~ ~0.15 ~ run tp @e[type=area_effect_cloud,tag=HologramCollider,distance=..0.0001,limit=1] ~ ~ ~ ~90 ~
+    execute unless data storage hologram_ui: TextGroup[-1].Setting{Selectable:0b} positioned ~ ~0.15 ~ store result score @e[type=area_effect_cloud,tag=HologramCollider,distance=..0.0001,limit=1] HologramID run data get storage hologram_ui: TextGroup[-1].HologramID
 # Listから削除
     data remove storage hologram_ui: TextGroup[-1].Text[-1]
 # 描画する文字がまだある場合の処理
