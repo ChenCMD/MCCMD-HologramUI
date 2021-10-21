@@ -5,8 +5,8 @@
 
 # ItemIconの検査
     data modify storage hologram_ui: Test.String set from storage hologram_ui: TextGroup[-1].Text[-1]
-    execute if data storage hologram_ui: Test{String:"ItemIcon()"} run function hologram_ui:core/generate/item_icon
-    execute unless data storage hologram_ui: Test{String:"ItemIcon()"} unless data storage hologram_ui: Test{String:""} run function hologram_ui:core/generate/text
+    execute if data storage hologram_ui: Test{String:"Item()"} run function hologram_ui:core/generate/item_icon
+    execute unless data storage hologram_ui: Test{String:"Item()"} unless data storage hologram_ui: Test{String:""} run function hologram_ui:core/generate/text
 # Collider
     execute if data storage hologram_ui: TextGroup[-1].Setting{CursorCollider:1b} positioned ~ ~0.15 ~ run summon minecraft:area_effect_cloud ~ ~ ~ {Age:-2147483648,Duration:-1,WaitTime:-2147483648,Tags:["Hologram","HologramCollider"]}
     execute if data storage hologram_ui: TextGroup[-1].Setting{CursorCollider:1b} positioned ~ ~0.15 ~ run tp @e[type=area_effect_cloud,tag=HologramCollider,distance=..0.0001,limit=1] ~ ~ ~ ~90 ~
