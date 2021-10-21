@@ -9,7 +9,6 @@
     #declare tag HologramCollider
     #declare tag HologramStand
     #declare tag HologramChar
-    #declare tag HologramInteractTarget
     #alias entity Marker 0-a-17a7-4-0
     scoreboard objectives add HologramUICore dummy
 scoreboard players set $-1 HologramUICore -1
@@ -17,17 +16,22 @@ scoreboard players set $2 HologramUICore 2
 
 forceload add 0 0
 
-#> Hologram
+#> HologramUI
 # TextGroup[] テキストデータ
 # @api
 #declare storage hologram_ui:
 
-#> Hologram
+#> HologramUI
 # ホログラムを操作可能なプレイヤーに毎tick付与
 # @api
 #declare tag HologramOperator
 
-#> Hologram
+#> HologramUI
+# ホログラムの当たり判定となるスライム
+# @api
+#declare tag HologramInteractTarget
+
+#> HologramUI
 # ホログラムが殴られた際に選択されているホログラムIDが記録されています。
 # @api
 scoreboard objectives add HologramID dummy
