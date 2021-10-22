@@ -1,6 +1,8 @@
 # Example/About
 このdatapackはHologramUIの実装例です。
 
+https://user-images.githubusercontent.com/46134240/138413543-25604a02-35ed-484a-87af-f03e2dd6cf16.mp4
+
 ## 要件
 座標`10,10,10` ~ `15,13,10`にHologramUIを利用したメニューを作りたい。  
 メニューは`10,10,10` ~ `15,12,14`の範囲内の全プレイヤーが利用できるものとする
