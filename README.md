@@ -159,7 +159,7 @@ TextGroup: Compound[]
 このタグはホログラムを操作させたいエリア内に居る操作させたいプレイヤーに毎tick付与する必要があります。
 
 ### 選択検知イベントのハンドル
-#### [実装例](Example/data/example/functions/menu/select.mcfunction#L7-11)
+#### [実装例](Example/data/example/functions/menu/select.mcfunction#L7-L11)
 ホログラムを対象プレイヤーが選択した場合、tag/function: `#minecraft:select_hologram`が選択したプレイヤーを実行者として実行されます。  
 その際objective: `HologramID`に選択したホログラムの識別IDが入っているのでそれを元に操作を分岐したりすることが出来ます。
 
