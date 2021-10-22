@@ -149,17 +149,17 @@ TextGroup: Compound[]
 ホログラムの選択を検知するには以下の前準備が必要です。
 
 ### 当たり判定の配置
-#### [実装例](Example/data/example/functions/menu/summon_interact_target.mcfunction)
+#### [実装例](Example/data/example/functions/menu/summon_interact_target.mcfunction#L8)
 ホログラムを選択出来るようにするためにその実体entity tag: `HologramInteractTarget`を持つslimeをホログラムの周囲に配置する必要があります。  
 下記でプレイヤーに付与されるHologramOperatorのタグの付与範囲では、どこからホログラムにカーソルを合わせて殴っても上記のスライムに判定が吸われるようにするべきです。
 
 ### 対象プレイヤーへの設定
-#### [実装例](Example/data/example/functions/menu/tick.mcfunction)
+#### [実装例](Example/data/example/functions/tick.mcfunction#L8)
 ホログラムを選択する際、プレイヤーがtag: `HologramOperator`を持つ必要があります。  
 このタグはホログラムを操作させたいエリア内に居る操作させたいプレイヤーに毎tick付与する必要があります。
 
 ### 選択検知イベントのハンドル
-#### [実装例](Example/data/example/functions/menu/select.mcfunction)
+#### [実装例](Example/data/example/functions/menu/select.mcfunction#L7-11)
 ホログラムを対象プレイヤーが選択した場合、tag/function: `#minecraft:select_hologram`が選択したプレイヤーを実行者として実行されます。  
 その際objective: `HologramID`に選択したホログラムの識別IDが入っているのでそれを元に操作を分岐したりすることが出来ます。
 
